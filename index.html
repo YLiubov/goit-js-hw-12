@@ -2,42 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-12/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     
     <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-f736e62a.js">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-4b066c51.css">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-157bb449.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-6e0bf343.js">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-1cd1f9d9.css">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-34fd79dc.css">
   </head>
   <body>
-    <section>
-      <form action="submit" class="js-search-form search-form">
-        <div class="form-group">     
-        <input
-          type="text"
-          placeholder="Search images..."
-          name="search-image"
-          class="search-input"
-          autocomplete="off"
-          required
-        />
-        <button class="search-button button">Search</button>
-        </div> 
-      </form>
-      <div class="loader"></div>
-        <ul class="js-images-list"></ul>
-        <div class="container-loader">
-          <div class="loader-more"></div>
-          <p class="end-loader">
-            We're sorry, but you've reached the end of search results.
-          </p>
-          <div class="tumb-button">
-            <button class="load-button button">Load more</button>
-          </div>
-        </div>
-    </section>
+   
+    <form class="ask-form" autocomplete="off">
+    
+      <input name="askChoice" class="ask-choice" placeholder="Search imeges..."></input>
+    
+      <button type="submit" class="submit">Start</button>
+    </form>
+    
+    <!-- <span class="loader"></span> -->
+    
+     
+    
+    <div class="container">
+    
+    
+    </div>
+
+      <button type="button" class="load-more js-load-more is-hidden">
+        Load more
+      </button>
+
+      <div class="loader">
+        <div class="loader_inner"></div>
+      </div>
+      
+      <div class="backdrop js-backdrop is-hidden"></div>
+     
+
     
   </body>
 </html>
