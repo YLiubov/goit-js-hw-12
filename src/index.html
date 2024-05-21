@@ -1,41 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-   
-    <form class="ask-form" autocomplete="off">
-    
-      <input name="askChoice" class="ask-choice" placeholder="Search imeges..."></input>
-    
-      <button type="submit" class="submit">Start</button>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Search App</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Image Search App</h1>
+  </header>
+  <main>
+    <form id="search-form" class="form">
+      <input type="text" id="search-input" placeholder="Search images..." required class="input">
+      <button type="submit" class="button">Search</button>
     </form>
-    
-    <!-- <span class="loader"></span> -->
-    
-     
-    
-    <div class="container">
-    
-    
-    </div>
+    <div id="gallery" class="gallery"></div>
+    <div class="loader" id="loader"></div>
 
-      <button type="button" class="load-more js-load-more is-hidden">
-        Load more
-      </button>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
 
-      <div class="loader">
-        <div class="loader_inner"></div>
-      </div>
-      
-      <div class="backdrop js-backdrop is-hidden"></div>
-     
-
-    <script type="module" src="./main.js"></script>
-  </body>
 </html>

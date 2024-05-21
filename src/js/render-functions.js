@@ -1,38 +1,45 @@
-export function createMarkup(arr) {
-    return arr.map(({id, largeImageURL, webformatURL, tags, likes, views, comments, downloads }
-) => `
-        <li class="list-card">
-        <a class="gallery-link" href="${largeImageURL}">
-            <img src="${webformatURL}" alt="${tags}" class="short-card" >
-            <ul class="list-item" >
-            <li class="card-foot">
-            <div class="item" >
-            <p class="item-div">Likes</p>
-            <p class="item-div">${likes}</p>
-            </div> 
-            </li>
-            <li class="card-foot">
-            <div class="item" >
-            <p class="item-div">Views</p>
-            <p class="item-div">${views}</p>
-            </div> 
-            </li>
-            <li class="card-foot">
-            <div class="item" >
-            <p class="item-div">Comments</p>
-            <p class="item-div">${comments}</p>
-            </div> 
-            </li>
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+export function clearGallery() {
+  const gallery = document.querySelector('.gallery');
+  gallery.innerHTML = '';
+}
+
+export function renderImages(images) {
+  const gallery = document.querySelector('.gallery');
+  images.forEach(image => {
+    const card = createImageCard(image);
+    gallery.appendChild(card);
+  });
+
+  const lightbox = new SimpleLightbox('.gallery a', {});
+  lightbox.refresh();
+}
+
+function createImageCard(image) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+
+  const img = document.createElement('img');
+  img.src = image.webformatURL;
+  img.alt = image.tags;
+
+  const link = document.createElement('a');
+  link.href = image.largeImageURL;
+  link.appendChild(img);
   
-            <li class="card-foot">
-            <div class="item" >
-            <p class="item-div">Downloads</p>
-            <p class="item-div">${downloads}</p>
-            </div> 
-            </li>
-            
-            </ul>
-            </a>
-        </li>
-    `).join("")
+  card.appendChild(link);
+
+  const cardInfo = document.createElement('div');
+  cardInfo.classList.add('card-info');
+  cardInfo.innerHTML = `
+    <p>Likes: ${image.likes}</p>
+    <p>Views: ${image.views}</p>
+    <p>Comments: ${image.comments}</p>
+    <p>Downloads: ${image.downloads}</p>
+  `;
+  card.appendChild(cardInfo);
+
+  return card;
 }
