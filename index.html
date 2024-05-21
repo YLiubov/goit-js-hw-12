@@ -1,45 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-12/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    
-    <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-6e0bf343.js">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-1cd1f9d9.css">
-    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-34fd79dc.css">
-  </head>
-  <body>
-   
-    <form class="ask-form" autocomplete="off">
-    
-      <input name="askChoice" class="ask-choice" placeholder="Search imeges..."></input>
-    
-      <button type="submit" class="submit">Start</button>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Search App</title>
+  
+  <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-8c59ed88.js">
+  <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-1cd1f9d9.css">
+  <link rel="stylesheet" href="/goit-js-hw-12/assets/index-a4c67f21.css">
+</head>
+
+<body>
+  <header>
+    <h1>Image Search App</h1>
+  </header>
+  <main>
+    <form id="search-form" class="form">
+      <input type="text" id="search-input" placeholder="Search images..." required class="input">
+      <button type="submit" class="button">Search</button>
     </form>
-    
-    <!-- <span class="loader"></span> -->
-    
-     
-    
-    <div class="container">
-    
-    
-    </div>
+    <div id="gallery" class="gallery"></div>
+    <div class="loader" id="loader"></div>
 
-      <button type="button" class="load-more js-load-more is-hidden">
-        Load more
-      </button>
+  </main>
+  
+</body>
 
-      <div class="loader">
-        <div class="loader_inner"></div>
-      </div>
-      
-      <div class="backdrop js-backdrop is-hidden"></div>
-     
-
-    
-  </body>
 </html>
